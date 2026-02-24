@@ -1,0 +1,511 @@
+[
+    {
+        "id": "b001",
+        "prompt": "\"apple\" の意味は？",
+        "choices": [
+            "りんご",
+            "みかん",
+            "ぶどう",
+            "もも"
+        ],
+        "answerIndex": 0,
+        "explanation": "apple = りんご。果物の基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "fruit",
+            "food"
+        ]
+    },
+    {
+        "id": "b002",
+        "prompt": "\"dog\" の意味は？",
+        "choices": [
+            "猫",
+            "犬",
+            "鳥",
+            "魚"
+        ],
+        "answerIndex": 1,
+        "explanation": "dog = 犬。最も基本的な動物の単語です。",
+        "level": "beginner",
+        "tags": [
+            "animal"
+        ]
+    },
+    {
+        "id": "b003",
+        "prompt": "\"book\" の意味は？",
+        "choices": [
+            "ペン",
+            "ノート",
+            "本",
+            "机"
+        ],
+        "answerIndex": 2,
+        "explanation": "book = 本。学校で使う基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "school",
+            "object"
+        ]
+    },
+    {
+        "id": "b004",
+        "prompt": "\"water\" の意味は？",
+        "choices": [
+            "水",
+            "火",
+            "土",
+            "風"
+        ],
+        "answerIndex": 0,
+        "explanation": "water = 水。日常生活の基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "nature",
+            "daily"
+        ]
+    },
+    {
+        "id": "b005",
+        "prompt": "\"happy\" の意味は？",
+        "choices": [
+            "悲しい",
+            "怒っている",
+            "嬉しい",
+            "疲れた"
+        ],
+        "answerIndex": 2,
+        "explanation": "happy = 嬉しい、幸せな。感情を表す基本形容詞です。",
+        "level": "beginner",
+        "tags": [
+            "emotion",
+            "adjective"
+        ]
+    },
+    {
+        "id": "b006",
+        "prompt": "\"run\" の意味は？",
+        "choices": [
+            "歩く",
+            "走る",
+            "泳ぐ",
+            "飛ぶ"
+        ],
+        "answerIndex": 1,
+        "explanation": "run = 走る。基本的な動作動詞です。",
+        "level": "beginner",
+        "tags": [
+            "action",
+            "verb"
+        ]
+    },
+    {
+        "id": "b007",
+        "prompt": "\"house\" の意味は？",
+        "choices": [
+            "学校",
+            "病院",
+            "家",
+            "店"
+        ],
+        "answerIndex": 2,
+        "explanation": "house = 家。建物を表す基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "building",
+            "daily"
+        ]
+    },
+    {
+        "id": "b008",
+        "prompt": "\"eat\" の意味は？",
+        "choices": [
+            "飲む",
+            "食べる",
+            "寝る",
+            "起きる"
+        ],
+        "answerIndex": 1,
+        "explanation": "eat = 食べる。日常生活の基本動詞です。",
+        "level": "beginner",
+        "tags": [
+            "action",
+            "food",
+            "verb"
+        ]
+    },
+    {
+        "id": "b009",
+        "prompt": "\"big\" の意味は？",
+        "choices": [
+            "小さい",
+            "大きい",
+            "長い",
+            "短い"
+        ],
+        "answerIndex": 1,
+        "explanation": "big = 大きい。サイズを表す基本形容詞です。",
+        "level": "beginner",
+        "tags": [
+            "size",
+            "adjective"
+        ]
+    },
+    {
+        "id": "b010",
+        "prompt": "\"sun\" の意味は？",
+        "choices": [
+            "月",
+            "星",
+            "太陽",
+            "雲"
+        ],
+        "answerIndex": 2,
+        "explanation": "sun = 太陽。自然に関する基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "nature",
+            "space"
+        ]
+    },
+    {
+        "id": "b011",
+        "prompt": "\"school\" の意味は？",
+        "choices": [
+            "公園",
+            "学校",
+            "図書館",
+            "駅"
+        ],
+        "answerIndex": 1,
+        "explanation": "school = 学校。教育に関する基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "education",
+            "building"
+        ]
+    },
+    {
+        "id": "b012",
+        "prompt": "\"cold\" の意味は？",
+        "choices": [
+            "暑い",
+            "暖かい",
+            "涼しい",
+            "寒い"
+        ],
+        "answerIndex": 3,
+        "explanation": "cold = 寒い、冷たい。気温や温度を表す形容詞です。",
+        "level": "beginner",
+        "tags": [
+            "weather",
+            "adjective"
+        ]
+    },
+    {
+        "id": "b013",
+        "prompt": "\"friend\" の意味は？",
+        "choices": [
+            "家族",
+            "友達",
+            "先生",
+            "隣人"
+        ],
+        "answerIndex": 1,
+        "explanation": "friend = 友達。人間関係の基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "relationship",
+            "people"
+        ]
+    },
+    {
+        "id": "b014",
+        "prompt": "\"sleep\" の意味は？",
+        "choices": [
+            "食べる",
+            "歩く",
+            "眠る",
+            "話す"
+        ],
+        "answerIndex": 2,
+        "explanation": "sleep = 眠る。日常の基本動詞です。",
+        "level": "beginner",
+        "tags": [
+            "action",
+            "daily",
+            "verb"
+        ]
+    },
+    {
+        "id": "b015",
+        "prompt": "\"red\" の意味は？",
+        "choices": [
+            "青",
+            "赤",
+            "緑",
+            "黄色"
+        ],
+        "answerIndex": 1,
+        "explanation": "red = 赤。色を表す基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "color"
+        ]
+    },
+    {
+        "id": "b016",
+        "prompt": "\"music\" の意味は？",
+        "choices": [
+            "絵",
+            "音楽",
+            "映画",
+            "本"
+        ],
+        "answerIndex": 1,
+        "explanation": "music = 音楽。芸術に関する基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "art",
+            "hobby"
+        ]
+    },
+    {
+        "id": "b017",
+        "prompt": "\"morning\" の意味は？",
+        "choices": [
+            "夜",
+            "昼",
+            "朝",
+            "夕方"
+        ],
+        "answerIndex": 2,
+        "explanation": "morning = 朝。時間帯を表す基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "time",
+            "daily"
+        ]
+    },
+    {
+        "id": "b018",
+        "prompt": "\"tree\" の意味は？",
+        "choices": [
+            "花",
+            "草",
+            "木",
+            "葉"
+        ],
+        "answerIndex": 2,
+        "explanation": "tree = 木。自然に関する基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "nature",
+            "plant"
+        ]
+    },
+    {
+        "id": "b019",
+        "prompt": "\"fast\" の意味は？",
+        "choices": [
+            "遅い",
+            "速い",
+            "高い",
+            "低い"
+        ],
+        "answerIndex": 1,
+        "explanation": "fast = 速い。速度を表す基本形容詞です。",
+        "level": "beginner",
+        "tags": [
+            "speed",
+            "adjective"
+        ]
+    },
+    {
+        "id": "b020",
+        "prompt": "\"rain\" の意味は？",
+        "choices": [
+            "雪",
+            "雨",
+            "雷",
+            "風"
+        ],
+        "answerIndex": 1,
+        "explanation": "rain = 雨。天気に関する基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "weather",
+            "nature"
+        ]
+    },
+    {
+        "id": "b021",
+        "prompt": "\"hand\" の意味は？",
+        "choices": [
+            "足",
+            "手",
+            "頭",
+            "目"
+        ],
+        "answerIndex": 1,
+        "explanation": "hand = 手。体の部位を表す基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "body"
+        ]
+    },
+    {
+        "id": "b022",
+        "prompt": "\"family\" の意味は？",
+        "choices": [
+            "友達",
+            "同僚",
+            "家族",
+            "恋人"
+        ],
+        "answerIndex": 2,
+        "explanation": "family = 家族。人間関係の基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "relationship",
+            "people"
+        ]
+    },
+    {
+        "id": "b023",
+        "prompt": "\"open\" の意味は？",
+        "choices": [
+            "閉じる",
+            "開ける",
+            "壊す",
+            "作る"
+        ],
+        "answerIndex": 1,
+        "explanation": "open = 開ける。日常の基本動詞です。",
+        "level": "beginner",
+        "tags": [
+            "action",
+            "verb"
+        ]
+    },
+    {
+        "id": "b024",
+        "prompt": "\"young\" の意味は？",
+        "choices": [
+            "若い",
+            "古い",
+            "新しい",
+            "高い"
+        ],
+        "answerIndex": 0,
+        "explanation": "young = 若い。年齢を表す基本形容詞です。",
+        "level": "beginner",
+        "tags": [
+            "age",
+            "adjective"
+        ]
+    },
+    {
+        "id": "b025",
+        "prompt": "\"fish\" の意味は？",
+        "choices": [
+            "鳥",
+            "虫",
+            "魚",
+            "馬"
+        ],
+        "answerIndex": 2,
+        "explanation": "fish = 魚。動物や食べ物の基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "animal",
+            "food"
+        ]
+    },
+    {
+        "id": "b026",
+        "prompt": "\"light\" の意味は？",
+        "choices": [
+            "暗い",
+            "重い",
+            "光",
+            "影"
+        ],
+        "answerIndex": 2,
+        "explanation": "light = 光、明るい。多義語ですが基本的には光を意味します。",
+        "level": "beginner",
+        "tags": [
+            "nature",
+            "noun"
+        ]
+    },
+    {
+        "id": "b027",
+        "prompt": "\"speak\" の意味は？",
+        "choices": [
+            "聞く",
+            "話す",
+            "読む",
+            "書く"
+        ],
+        "answerIndex": 1,
+        "explanation": "speak = 話す。コミュニケーションの基本動詞です。",
+        "level": "beginner",
+        "tags": [
+            "communication",
+            "verb"
+        ]
+    },
+    {
+        "id": "b028",
+        "prompt": "\"clean\" の意味は？",
+        "choices": [
+            "きれいな",
+            "汚い",
+            "新しい",
+            "古い"
+        ],
+        "answerIndex": 0,
+        "explanation": "clean = きれいな、清潔な。状態を表す基本形容詞です。",
+        "level": "beginner",
+        "tags": [
+            "state",
+            "adjective"
+        ]
+    },
+    {
+        "id": "b029",
+        "prompt": "\"winter\" の意味は？",
+        "choices": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+        ],
+        "answerIndex": 3,
+        "explanation": "winter = 冬。四季を表す基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "season",
+            "time"
+        ]
+    },
+    {
+        "id": "b030",
+        "prompt": "\"smile\" の意味は？",
+        "choices": [
+            "泣く",
+            "笑う",
+            "怒る",
+            "驚く"
+        ],
+        "answerIndex": 1,
+        "explanation": "smile = 微笑む、笑顔。感情表現の基本単語です。",
+        "level": "beginner",
+        "tags": [
+            "emotion",
+            "action"
+        ]
+    }
+]

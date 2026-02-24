@@ -1,0 +1,512 @@
+[
+    {
+        "id": "i001",
+        "prompt": "\"accomplish\" の意味は？",
+        "choices": [
+            "伴う",
+            "達成する",
+            "蓄積する",
+            "認める"
+        ],
+        "answerIndex": 1,
+        "explanation": "accomplish = 達成する、成し遂げる。目標達成を表す動詞です。",
+        "level": "intermediate",
+        "tags": [
+            "achievement",
+            "verb"
+        ]
+    },
+    {
+        "id": "i002",
+        "prompt": "\"adequate\" の意味は？",
+        "choices": [
+            "不十分な",
+            "適切な",
+            "過剰な",
+            "正確な"
+        ],
+        "answerIndex": 1,
+        "explanation": "adequate = 適切な、十分な。必要条件を満たすことを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "quantity",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i003",
+        "prompt": "\"brief\" の意味は？",
+        "choices": [
+            "長い",
+            "短い",
+            "広い",
+            "深い"
+        ],
+        "answerIndex": 1,
+        "explanation": "brief = 短い、簡潔な。時間や文章の短さを表します。",
+        "level": "intermediate",
+        "tags": [
+            "time",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i004",
+        "prompt": "\"circumstance\" の意味は？",
+        "choices": [
+            "結果",
+            "原因",
+            "状況",
+            "目的"
+        ],
+        "answerIndex": 2,
+        "explanation": "circumstance = 状況、事情。周囲の条件や状態を意味します。",
+        "level": "intermediate",
+        "tags": [
+            "situation",
+            "noun"
+        ]
+    },
+    {
+        "id": "i005",
+        "prompt": "\"deceive\" の意味は？",
+        "choices": [
+            "信じる",
+            "だます",
+            "決める",
+            "受け取る"
+        ],
+        "answerIndex": 1,
+        "explanation": "deceive = だます、欺く。相手を誤解させることを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "action",
+            "verb"
+        ]
+    },
+    {
+        "id": "i006",
+        "prompt": "\"elaborate\" の意味は？",
+        "choices": [
+            "単純な",
+            "精巧な",
+            "基本的な",
+            "一般的な"
+        ],
+        "answerIndex": 1,
+        "explanation": "elaborate = 精巧な、手の込んだ。詳細で複雑なことを表します。",
+        "level": "intermediate",
+        "tags": [
+            "quality",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i007",
+        "prompt": "\"fluent\" の意味は？",
+        "choices": [
+            "流暢な",
+            "不器用な",
+            "静かな",
+            "騒がしい"
+        ],
+        "answerIndex": 0,
+        "explanation": "fluent = 流暢な。言語をすらすら使えることを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "language",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i008",
+        "prompt": "\"genuine\" の意味は？",
+        "choices": [
+            "偽の",
+            "本物の",
+            "普通の",
+            "珍しい"
+        ],
+        "answerIndex": 1,
+        "explanation": "genuine = 本物の、誠実な。偽りのないことを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "quality",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i009",
+        "prompt": "\"hesitate\" の意味は？",
+        "choices": [
+            "急ぐ",
+            "ためらう",
+            "始める",
+            "続ける"
+        ],
+        "answerIndex": 1,
+        "explanation": "hesitate = ためらう、躊躇する。行動を迷うことを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "emotion",
+            "verb"
+        ]
+    },
+    {
+        "id": "i010",
+        "prompt": "\"inevitable\" の意味は？",
+        "choices": [
+            "避けられる",
+            "避けられない",
+            "見えない",
+            "信じられない"
+        ],
+        "answerIndex": 1,
+        "explanation": "inevitable = 避けられない、必然的な。必ず起こることを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "certainty",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i011",
+        "prompt": "\"justify\" の意味は？",
+        "choices": [
+            "批判する",
+            "正当化する",
+            "無視する",
+            "疑う"
+        ],
+        "answerIndex": 1,
+        "explanation": "justify = 正当化する。行為や判断の正しさを示すことを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "logic",
+            "verb"
+        ]
+    },
+    {
+        "id": "i012",
+        "prompt": "\"latitude\" の意味は？",
+        "choices": [
+            "経度",
+            "緯度",
+            "高度",
+            "速度"
+        ],
+        "answerIndex": 1,
+        "explanation": "latitude = 緯度。地球上の南北の位置を表します。",
+        "level": "intermediate",
+        "tags": [
+            "geography",
+            "noun"
+        ]
+    },
+    {
+        "id": "i013",
+        "prompt": "\"magnificent\" の意味は？",
+        "choices": [
+            "普通の",
+            "壮大な",
+            "小さな",
+            "地味な"
+        ],
+        "answerIndex": 1,
+        "explanation": "magnificent = 壮大な、素晴らしい。非常に印象的なことを表します。",
+        "level": "intermediate",
+        "tags": [
+            "quality",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i014",
+        "prompt": "\"negotiate\" の意味は？",
+        "choices": [
+            "拒否する",
+            "交渉する",
+            "同意する",
+            "要求する"
+        ],
+        "answerIndex": 1,
+        "explanation": "negotiate = 交渉する。合意に向けて話し合うことを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "business",
+            "verb"
+        ]
+    },
+    {
+        "id": "i015",
+        "prompt": "\"obstacle\" の意味は？",
+        "choices": [
+            "目標",
+            "障害",
+            "機会",
+            "結果"
+        ],
+        "answerIndex": 1,
+        "explanation": "obstacle = 障害、妨げ。進行を阻むものを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "challenge",
+            "noun"
+        ]
+    },
+    {
+        "id": "i016",
+        "prompt": "\"perspective\" の意味は？",
+        "choices": [
+            "視点",
+            "距離",
+            "方向",
+            "位置"
+        ],
+        "answerIndex": 0,
+        "explanation": "perspective = 視点、見方。物事を見る角度を意味します。",
+        "level": "intermediate",
+        "tags": [
+            "thinking",
+            "noun"
+        ]
+    },
+    {
+        "id": "i017",
+        "prompt": "\"reluctant\" の意味は？",
+        "choices": [
+            "熱心な",
+            "気が進まない",
+            "確信した",
+            "満足した"
+        ],
+        "answerIndex": 1,
+        "explanation": "reluctant = 気が進まない、渋る。やりたくない気持ちを表します。",
+        "level": "intermediate",
+        "tags": [
+            "emotion",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i018",
+        "prompt": "\"strategy\" の意味は？",
+        "choices": [
+            "戦略",
+            "戦術",
+            "歴史",
+            "構造"
+        ],
+        "answerIndex": 0,
+        "explanation": "strategy = 戦略。長期的な計画や方針を意味します。",
+        "level": "intermediate",
+        "tags": [
+            "planning",
+            "noun"
+        ]
+    },
+    {
+        "id": "i019",
+        "prompt": "\"thoroughly\" の意味は？",
+        "choices": [
+            "部分的に",
+            "表面的に",
+            "徹底的に",
+            "偶然に"
+        ],
+        "answerIndex": 2,
+        "explanation": "thoroughly = 徹底的に、完全に。すべてにわたって行うことを表します。",
+        "level": "intermediate",
+        "tags": [
+            "degree",
+            "adverb"
+        ]
+    },
+    {
+        "id": "i020",
+        "prompt": "\"ultimate\" の意味は？",
+        "choices": [
+            "最初の",
+            "究極の",
+            "中間の",
+            "一時的な"
+        ],
+        "answerIndex": 1,
+        "explanation": "ultimate = 究極の、最終的な。最高・最後のものを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "degree",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i021",
+        "prompt": "\"vulnerable\" の意味は？",
+        "choices": [
+            "強い",
+            "傷つきやすい",
+            "価値のある",
+            "目に見えない"
+        ],
+        "answerIndex": 1,
+        "explanation": "vulnerable = 傷つきやすい、脆弱な。攻撃や影響を受けやすいことを表します。",
+        "level": "intermediate",
+        "tags": [
+            "state",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i022",
+        "prompt": "\"withdraw\" の意味は？",
+        "choices": [
+            "預ける",
+            "引き出す",
+            "送る",
+            "貯める"
+        ],
+        "answerIndex": 1,
+        "explanation": "withdraw = 引き出す、撤退する。お金や軍隊を引くことを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "finance",
+            "verb"
+        ]
+    },
+    {
+        "id": "i023",
+        "prompt": "\"ambiguous\" の意味は？",
+        "choices": [
+            "明確な",
+            "曖昧な",
+            "重要な",
+            "複雑な"
+        ],
+        "answerIndex": 1,
+        "explanation": "ambiguous = 曖昧な。複数の解釈が可能なことを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "clarity",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i024",
+        "prompt": "\"determine\" の意味は？",
+        "choices": [
+            "終わる",
+            "決定する",
+            "想像する",
+            "比較する"
+        ],
+        "answerIndex": 1,
+        "explanation": "determine = 決定する、確定する。何かを明らかにすることを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "decision",
+            "verb"
+        ]
+    },
+    {
+        "id": "i025",
+        "prompt": "\"essential\" の意味は？",
+        "choices": [
+            "不要な",
+            "追加の",
+            "不可欠な",
+            "特別な"
+        ],
+        "answerIndex": 2,
+        "explanation": "essential = 不可欠な、本質的な。絶対に必要なことを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "importance",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i026",
+        "prompt": "\"pursue\" の意味は？",
+        "choices": [
+            "避ける",
+            "追求する",
+            "放棄する",
+            "観察する"
+        ],
+        "answerIndex": 1,
+        "explanation": "pursue = 追求する、追い求める。目標を目指して努力することを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "goal",
+            "verb"
+        ]
+    },
+    {
+        "id": "i027",
+        "prompt": "\"consequence\" の意味は？",
+        "choices": [
+            "原因",
+            "結果",
+            "過程",
+            "境界"
+        ],
+        "answerIndex": 1,
+        "explanation": "consequence = 結果、帰結。行為の結果として生じることを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "cause-effect",
+            "noun"
+        ]
+    },
+    {
+        "id": "i028",
+        "prompt": "\"insight\" の意味は？",
+        "choices": [
+            "外見",
+            "洞察",
+            "予感",
+            "記憶"
+        ],
+        "answerIndex": 1,
+        "explanation": "insight = 洞察、見識。物事の本質を深く理解することを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "thinking",
+            "noun"
+        ]
+    },
+    {
+        "id": "i029",
+        "prompt": "\"diverse\" の意味は？",
+        "choices": [
+            "均一な",
+            "多様な",
+            "類似した",
+            "単純な"
+        ],
+        "answerIndex": 1,
+        "explanation": "diverse = 多様な。様々な種類があることを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "variety",
+            "adjective"
+        ]
+    },
+    {
+        "id": "i030",
+        "prompt": "\"enhance\" の意味は？",
+        "choices": [
+            "減少させる",
+            "高める",
+            "維持する",
+            "取り除く"
+        ],
+        "answerIndex": 1,
+        "explanation": "enhance = 高める、強化する。質や価値を向上させることを意味します。",
+        "level": "intermediate",
+        "tags": [
+            "improvement",
+            "verb"
+        ]
+    }
+]
