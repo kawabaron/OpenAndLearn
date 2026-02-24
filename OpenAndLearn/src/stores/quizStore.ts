@@ -40,15 +40,31 @@ export const useQuizStore = create<QuizState>((set, get) => ({
 
         set({ isProcessing: true, selectedIndex: index });
 
-        const settings = useSettingsStore.getState().settings;
-        const result = await quizFlowService.processAnswer(
-            currentQuestion,
-            index,
-            settings,
-            'manual'
-        );
+        try {
+            const settings = useSettingsStore.getState().settings;
+            const result = await quizFlowService.processAnswer(
+                currentQuestion,
+                index,
+                settings,
+                'manual'
+            );
 
-        set({ phase: 'result', result, isProcessing: false });
+            set({ phase: 'result', result, isProcessing: false });
+        } catch (e) {
+            console.error('submitAnswer error:', e);
+            // エラー時でも結果を表示できるようフォールバック
+            const isCorrect = index === currentQuestion.answerIndex;
+            set({
+                phase: 'result',
+                result: {
+                    isCorrect,
+                    isSkipped: false,
+                    unlockGranted: false,
+                    explanation: currentQuestion.explanation,
+                },
+                isProcessing: false,
+            });
+        }
     },
 
     skipQuestion: async () => {
@@ -57,14 +73,28 @@ export const useQuizStore = create<QuizState>((set, get) => ({
 
         set({ isProcessing: true });
 
-        const settings = useSettingsStore.getState().settings;
-        const result = await quizFlowService.processSkip(
-            currentQuestion,
-            settings,
-            'manual'
-        );
+        try {
+            const settings = useSettingsStore.getState().settings;
+            const result = await quizFlowService.processSkip(
+                currentQuestion,
+                settings,
+                'manual'
+            );
 
-        set({ phase: 'result', result, isProcessing: false });
+            set({ phase: 'result', result, isProcessing: false });
+        } catch (e) {
+            console.error('skipQuestion error:', e);
+            set({
+                phase: 'result',
+                result: {
+                    isCorrect: false,
+                    isSkipped: true,
+                    unlockGranted: false,
+                    explanation: currentQuestion?.explanation || '',
+                },
+                isProcessing: false,
+            });
+        }
     },
 
     reset: () => {

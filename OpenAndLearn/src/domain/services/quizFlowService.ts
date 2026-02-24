@@ -3,12 +3,12 @@
  * 出題 → 判定 → ログ保存 → 解除付与 の一連処理
  */
 
-import { v4 as uuidv4 } from 'uuid';
 import { answerLogRepository } from '../../data/repositories/answerLogRepository';
 import { questionRepository } from '../../data/repositories/questionRepository';
 import { sessionUnlockRepository } from '../../data/repositories/sessionUnlockRepository';
 import { screenTimeBridge } from '../../native';
 import { minutesFromNowISO, nowISO } from '../../utils/date';
+import { generateId } from '../../utils/id';
 import { AnswerLog, AppSettings, QuestionItem, QuizResult, SessionUnlock } from '../models';
 
 export const quizFlowService = {
@@ -32,7 +32,7 @@ export const quizFlowService = {
 
         // ログ保存
         const log: AnswerLog = {
-            id: uuidv4(),
+            id: generateId(),
             questionId: question.id,
             prompt: question.prompt,
             selectedIndex,
@@ -50,7 +50,7 @@ export const quizFlowService = {
         if (isCorrect) {
             const unlockEndAt = minutesFromNowISO(settings.unlockDurationMinutes);
             const session: SessionUnlock = {
-                id: uuidv4(),
+                id: generateId(),
                 startAt: nowISO(),
                 endAt: unlockEndAt,
                 reason: 'correct',
@@ -100,7 +100,7 @@ export const quizFlowService = {
     ): Promise<QuizResult> {
         // ログ保存
         const log: AnswerLog = {
-            id: uuidv4(),
+            id: generateId(),
             questionId: question.id,
             prompt: question.prompt,
             selectedIndex: null,
@@ -118,7 +118,7 @@ export const quizFlowService = {
         if (settings.skipUnlockMinutes > 0) {
             const unlockEndAt = minutesFromNowISO(settings.skipUnlockMinutes);
             const session: SessionUnlock = {
-                id: uuidv4(),
+                id: generateId(),
                 startAt: nowISO(),
                 endAt: unlockEndAt,
                 reason: 'skip',
