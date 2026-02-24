@@ -59,12 +59,13 @@ export default function RuleSettingsScreen() {
                                 description="スキップした場合のアプリ解除時間"
                                 value={String(settings.skipUnlockMinutes)}
                                 options={[
-                                    { label: 'なし', value: '0' },
                                     { label: '1分', value: '1' },
+                                    { label: '5分', value: '5' },
+                                    { label: '10分', value: '10' },
                                 ]}
                                 onSelect={(v) =>
                                     updateSettings({
-                                        skipUnlockMinutes: Number(v) as 0 | 1,
+                                        skipUnlockMinutes: Number(v) as 1 | 5 | 10,
                                     })
                                 }
                             />

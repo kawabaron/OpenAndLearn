@@ -1,18 +1,21 @@
 import { AnswerLog } from '@/src/domain/models';
 import { useAppStore } from '@/src/stores/appStore';
+import { formatDate } from '@/src/utils/date';
 import { calculateDailyStats, getWrongAnswerLogs } from '@/src/utils/stats';
 import { useFocusEffect } from 'expo-router';
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
     FlatList,
     StyleSheet,
     Text,
+    TouchableOpacity,
     View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HistoryScreen() {
     const { allLogs, loadAllLogs } = useAppStore();
+    const [expandedDate, setExpandedDate] = useState<string | null>(null);
 
     useFocusEffect(
         useCallback(() => {
@@ -23,65 +26,138 @@ export default function HistoryScreen() {
     const dailyStats = calculateDailyStats(allLogs, 7);
     const wrongLogs = getWrongAnswerLogs(allLogs, 20);
 
-    const renderDayItem = ({
-        item,
-    }: {
-        item: { date: string; totalCount: number; correctCount: number; accuracy: number };
-    }) => (
-        <View style={styles.dayRow}>
-            <Text style={styles.dayDate}>{formatDisplayDate(item.date)}</Text>
-            <View style={styles.dayStats}>
-                <Text style={styles.dayCount}>{item.totalCount}問</Text>
+    // 特定の日のログを取得
+    const getLogsForDate = (dateStr: string): AnswerLog[] => {
+        return allLogs
+            .filter((log) => {
+                const logDate = new Date(log.answeredAt);
+                return formatDate(logDate) === dateStr;
+            })
+            .sort(
+                (a, b) =>
+                    new Date(b.answeredAt).getTime() - new Date(a.answeredAt).getTime()
+            );
+    };
+
+    const toggleDate = (dateStr: string) => {
+        setExpandedDate(expandedDate === dateStr ? null : dateStr);
+    };
+
+    // 共通のログ表示コンポーネント
+    const renderLogItem = (item: AnswerLog) => (
+        <View style={styles.logRow} key={item.id}>
+            <View style={styles.logHeader}>
+                <Text style={styles.logPrompt}>{item.prompt}</Text>
                 <View
                     style={[
-                        styles.accuracyBadge,
+                        styles.logResultBadge,
                         {
-                            backgroundColor:
-                                item.accuracy >= 80
-                                    ? '#E8F5E9'
-                                    : item.accuracy >= 50
-                                        ? '#FFF3E0'
-                                        : '#FFEBEE',
+                            backgroundColor: item.isCorrect
+                                ? '#E8F5E9'
+                                : item.isSkipped
+                                    ? '#FFF3E0'
+                                    : '#FFEBEE',
                         },
                     ]}
                 >
                     <Text
-                        style={[
-                            styles.accuracyText,
-                            {
-                                color:
-                                    item.accuracy >= 80
-                                        ? '#2E7D32'
-                                        : item.accuracy >= 50
-                                            ? '#E65100'
-                                            : '#C62828',
-                            },
-                        ]}
+                        style={{
+                            fontSize: 11,
+                            fontWeight: '700',
+                            color: item.isCorrect
+                                ? '#2E7D32'
+                                : item.isSkipped
+                                    ? '#E65100'
+                                    : '#C62828',
+                        }}
                     >
-                        {item.totalCount > 0 ? `${item.accuracy}%` : '-'}
+                        {item.isCorrect ? '正解' : item.isSkipped ? 'スキップ' : '不正解'}
                     </Text>
                 </View>
             </View>
-        </View>
-    );
-
-    const renderWrongItem = ({ item }: { item: AnswerLog }) => (
-        <View style={styles.wrongRow}>
-            <View style={styles.wrongHeader}>
-                <Text style={styles.wrongPrompt}>{item.prompt}</Text>
-                <Text style={styles.wrongDate}>
-                    {new Date(item.answeredAt).toLocaleDateString('ja-JP', {
-                        month: 'short',
-                        day: 'numeric',
-                    })}
-                </Text>
-            </View>
-            <Text style={styles.wrongDetail}>
-                選択: {item.selectedIndex != null ? `選択肢${item.selectedIndex + 1}` : '-'} →
-                正解: 選択肢{item.correctIndex + 1}
+            <Text style={styles.logDetail}>
+                選択: {item.selectedChoice ?? (item.selectedIndex != null ? `選択肢${item.selectedIndex + 1}` : '-')}
+                {' → '}
+                正解: {item.correctChoice ?? `選択肢${item.correctIndex + 1}`}
             </Text>
         </View>
     );
+
+    const renderDayItem = ({
+        item,
+    }: {
+        item: { date: string; totalCount: number; correctCount: number; accuracy: number };
+    }) => {
+        const isExpanded = expandedDate === item.date;
+        const dayLogs = isExpanded ? getLogsForDate(item.date) : [];
+
+        return (
+            <View>
+                <TouchableOpacity
+                    style={styles.dayRow}
+                    onPress={() => item.totalCount > 0 && toggleDate(item.date)}
+                    activeOpacity={item.totalCount > 0 ? 0.6 : 1}
+                >
+                    <View style={styles.dayLeft}>
+                        <Text style={styles.dayDate}>
+                            {formatDisplayDate(item.date)}
+                        </Text>
+                        {item.totalCount > 0 && (
+                            <Text style={styles.expandIcon}>
+                                {isExpanded ? '▼' : '▶'}
+                            </Text>
+                        )}
+                    </View>
+                    <View style={styles.dayStats}>
+                        <Text style={styles.dayCount}>{item.totalCount}問</Text>
+                        <View
+                            style={[
+                                styles.accuracyBadge,
+                                {
+                                    backgroundColor:
+                                        item.accuracy >= 80
+                                            ? '#E8F5E9'
+                                            : item.accuracy >= 50
+                                                ? '#FFF3E0'
+                                                : '#FFEBEE',
+                                },
+                            ]}
+                        >
+                            <Text
+                                style={[
+                                    styles.accuracyText,
+                                    {
+                                        color:
+                                            item.accuracy >= 80
+                                                ? '#2E7D32'
+                                                : item.accuracy >= 50
+                                                    ? '#E65100'
+                                                    : '#C62828',
+                                    },
+                                ]}
+                            >
+                                {item.totalCount > 0 ? `${item.accuracy}%` : '-'}
+                            </Text>
+                        </View>
+                    </View>
+                </TouchableOpacity>
+
+                {/* 展開時の詳細 */}
+                {isExpanded && dayLogs.length > 0 && (
+                    <View style={styles.expandedContainer}>
+                        {dayLogs.map((log, i) => (
+                            <View key={log.id}>
+                                {renderLogItem(log)}
+                                {i < dayLogs.length - 1 && (
+                                    <View style={styles.logDivider} />
+                                )}
+                            </View>
+                        ))}
+                    </View>
+                )}
+            </View>
+        );
+    };
 
     return (
         <SafeAreaView style={styles.container} edges={['bottom']}>
@@ -93,31 +169,44 @@ export default function HistoryScreen() {
                         {/* 直近7日統計 */}
                         <View style={styles.section}>
                             <Text style={styles.sectionTitle}>📊 直近7日間</Text>
+                            <Text style={styles.sectionHint}>
+                                日付をタップで詳細を表示
+                            </Text>
                             <View style={styles.sectionCard}>
                                 {dailyStats.map((day, i) => (
                                     <View key={day.date}>
                                         {renderDayItem({ item: day })}
-                                        {i < dailyStats.length - 1 && <View style={styles.divider} />}
+                                        {i < dailyStats.length - 1 && (
+                                            <View style={styles.divider} />
+                                        )}
                                     </View>
                                 ))}
                                 {dailyStats.length === 0 && (
-                                    <Text style={styles.emptyText}>まだデータがありません</Text>
+                                    <Text style={styles.emptyText}>
+                                        まだデータがありません
+                                    </Text>
                                 )}
                             </View>
                         </View>
 
                         {/* 誤答リスト */}
                         <View style={styles.section}>
-                            <Text style={styles.sectionTitle}>❌ 最近の誤答（最新20件）</Text>
+                            <Text style={styles.sectionTitle}>
+                                ❌ 最近の誤答（最新20件）
+                            </Text>
                             <View style={styles.sectionCard}>
                                 {wrongLogs.map((log, i) => (
                                     <View key={log.id}>
-                                        {renderWrongItem({ item: log })}
-                                        {i < wrongLogs.length - 1 && <View style={styles.divider} />}
+                                        {renderLogItem(log)}
+                                        {i < wrongLogs.length - 1 && (
+                                            <View style={styles.divider} />
+                                        )}
                                     </View>
                                 ))}
                                 {wrongLogs.length === 0 && (
-                                    <Text style={styles.emptyText}>誤答はありません 🎉</Text>
+                                    <Text style={styles.emptyText}>
+                                        誤答はありません 🎉
+                                    </Text>
                                 )}
                             </View>
                         </View>
@@ -171,6 +260,12 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: '700',
         color: '#8E8E93',
+        marginBottom: 4,
+        marginLeft: 4,
+    },
+    sectionHint: {
+        fontSize: 12,
+        color: '#AEAEB2',
         marginBottom: 10,
         marginLeft: 4,
     },
@@ -191,10 +286,19 @@ const styles = StyleSheet.create({
         paddingVertical: 14,
         paddingHorizontal: 16,
     },
+    dayLeft: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+    },
     dayDate: {
         fontSize: 15,
         fontWeight: '600',
         color: '#1C1C1E',
+    },
+    expandIcon: {
+        fontSize: 10,
+        color: '#AEAEB2',
     },
     dayStats: {
         flexDirection: 'row',
@@ -221,30 +325,44 @@ const styles = StyleSheet.create({
         backgroundColor: '#E5E5EA',
         marginHorizontal: 16,
     },
-    wrongRow: {
-        paddingVertical: 12,
-        paddingHorizontal: 16,
+    expandedContainer: {
+        backgroundColor: '#F9F9FB',
+        marginHorizontal: 8,
+        marginBottom: 8,
+        borderRadius: 10,
+        paddingVertical: 4,
     },
-    wrongHeader: {
+    logRow: {
+        paddingVertical: 10,
+        paddingHorizontal: 14,
+    },
+    logHeader: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         marginBottom: 4,
     },
-    wrongPrompt: {
-        fontSize: 15,
+    logPrompt: {
+        fontSize: 14,
         fontWeight: '600',
         color: '#1C1C1E',
         flex: 1,
         marginRight: 8,
     },
-    wrongDate: {
-        fontSize: 12,
-        color: '#AEAEB2',
+    logResultBadge: {
+        paddingHorizontal: 8,
+        paddingVertical: 2,
+        borderRadius: 6,
     },
-    wrongDetail: {
+    logDetail: {
         fontSize: 13,
-        color: '#8E8E93',
+        color: '#636366',
+        lineHeight: 20,
+    },
+    logDivider: {
+        height: StyleSheet.hairlineWidth,
+        backgroundColor: '#E0E0E0',
+        marginHorizontal: 14,
     },
     emptyText: {
         fontSize: 14,
